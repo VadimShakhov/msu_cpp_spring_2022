@@ -231,17 +231,7 @@ TEST_F(TestDS, Deserializer_error)
     {
         std::stringstream stream;
         std::string str = "1023 true 42";
-
-        Deserializer deserializer(stream);
-        Data_ibib y { 0, false, 0, false };
-        const Error err = deserializer.load(y);
-
-        ASSERT_EQ(err, Error::CorruptedArchive);
-    }
-
-    {
-        std::stringstream stream;
-        std::string str = "1023 true 42 false 43";
+        stream << str;
 
         Deserializer deserializer(stream);
         Data_ibib y { 0, false, 0, false };
@@ -253,6 +243,7 @@ TEST_F(TestDS, Deserializer_error)
     {
         std::stringstream stream;
         std::string str = "1023 truth 42 false";
+        stream << str;
 
         Deserializer deserializer(stream);
         Data_ibib y { 0, false, 0, false };
@@ -264,6 +255,7 @@ TEST_F(TestDS, Deserializer_error)
     {
         std::stringstream stream;
         std::string str = "102394567369538247562398476532985762 true 42 false";
+        stream << str;
 
         Deserializer deserializer(stream);
         Data_ibib y { 0, false, 0, false };
