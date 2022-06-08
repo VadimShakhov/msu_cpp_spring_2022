@@ -20,7 +20,7 @@ protected:
 TEST_F(TestThreadSort, Sorting)
 {
     size_t count = 100000;
-    FILE *nums = fopen("numbers.bin", "rb");
+    FILE *nums = fopen("numbers.bin", "w+b");
     for (size_t i=0; i<count; i++){
         num_type num = static_cast<num_type>(rand());
         fwrite(&num, sizeof(num_type), 1, nums);
