@@ -1,7 +1,6 @@
 #pragma once
 
 
-#include <atomic>
 #include <functional>
 #include <future>
 #include <mutex>
@@ -15,7 +14,7 @@ private:
 
     size_t size_;
     std::condition_variable alarm_;
-    std::atomic<bool> destruction_ = false;
+    bool destruction_ = false;
     std::mutex mutex_;
     std::vector<std::thread> threads_;
     std::queue<std::function<void()>> queue_;
