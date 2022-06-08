@@ -1,5 +1,8 @@
 #pragma once
 
+
+#include <stdexcept>
+
 class Allocator
 {
     public:
