@@ -6,8 +6,8 @@ TEST_LIBS=-lgtest_main -lgtest -lpthread
 
 all: test_bin
 
-test_bin: test.cpp Matrix.hpp
-	$(CC) $(FLAGS) test.cpp -o test_bin $(TEST_LIBS)
+test_bin: test.cpp Matrix.hpp Matrix.cpp
+	$(CC) $(FLAGS) test.cpp Matrix.cpp -o test_bin $(TEST_LIBS)
 
 test:
 	./test_bin
